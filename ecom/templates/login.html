@@ -1,0 +1,50 @@
+{%extends "index.html"%}
+{% load static %}
+{%block content%}
+<style>
+    .inputcontainer{
+        width: 400px;
+        height:auto;
+        margin: auto;
+        margin-bottom: 20px;
+        border: 1px solid black;
+        border-radius: 10px;
+        text-align: center;
+        background-color: aqua;
+    }
+    .inputcontainer button{
+        padding: 7px 20px;
+        border: .5px solid black;
+        color:white;
+        background-color: blue;
+        border: 10px;
+    }
+    .inputcontainerbutton:hover{
+        background-color: white;
+        color: cornflowerblue;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+        </div><div class="inputcontainer">
+           
+     
+           <form method="post">
+        {%csrf_token%}
+        <h1>login</h1>
+        {% for message in messages %}
+           <h6 style="color:red">{{message}}</h6>
+           {%endfor%}
+   <br>
+<br><input type="text" name="uname" placeholder="username"><br>
+<br><input type="password" name="pswd" placeholder="password"><br>
+<button type="submit">Login</button>
+     </form>
+     <br><br>
+     </div>
+    </div>
+</div>
+</div>
+</div>
+{%endblock%}

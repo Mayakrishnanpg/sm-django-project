@@ -1,0 +1,56 @@
+{%extends "index.html"%}
+{% load static %}
+{%block content%}
+<style>
+    .inputcontainer{
+        width: 400px;
+        height:auto;
+        margin: auto;
+        margin-bottom: 20px;
+        border: 1px solid black;
+        border-radius: 10px;
+        text-align: center;
+        background-color: aqua;
+    }
+    .inputcontainer button{
+        padding: 7px 20px;
+        border: .5px solid black;
+        color:white;
+        background-color: blue;
+        border: 10px;
+    }
+    .inputcontainerbutton:hover{
+        background-color: white;
+        color: cornflowerblue;
+    }
+</style>
+   
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+            </div><div class="inputcontainer">
+         <form method="post">
+            {%csrf_token %}
+            <h1>Register</h1>
+       <br>
+       {% for field in form%}
+       {{field.label}}:<br>
+       {{field}} <br>
+       {%endfor%}
+   
+    
+    <button type="submit">Register</button>
+         </form>
+         <br><br>
+         </div>
+        </div>
+    </div>
+    </div>
+ 
+    
+</div>
+
+{%endblock%}
+
+   
